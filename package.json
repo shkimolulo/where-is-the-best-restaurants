@@ -24,14 +24,30 @@
     "@types/react-native": "^0.62.16",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.4.0",
     "jest": "^26.1.0",
     "metro-react-native-babel-preset": "^0.60.0",
+    "react-dom": "^16.13.1",
     "react-test-renderer": "16.11.0",
     "typescript": "^3.9.6"
   },
   "jest": {
     "preset": "react-native",
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base|react-clone-referenced-element|react-navigation|react-native-animatable)"
+    ],
+    "setupFiles": [
+      "./__setups__/setup.js"
+    ]
   }
 }
