@@ -6,5 +6,4 @@ const App: () => ReactElement = () => {
   return <MainComponent />;
 };
 
-
 export default App;
