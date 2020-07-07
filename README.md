@@ -1,5 +1,8 @@
 # where-is-the-best-restaurants
 
+> 공식 문서를 보시면 더 정확합니다. [공식문서](https://reactnative.dev/docs/0.60/getting-started)에서 `React Native CLI Quickstart` 탭에 `MacOS`, `iOS`를 선택하셔서 문서를 확인하세요.
+
+
 ## 1. Node & Watchman 설치
 
 Node는 기존에 설치되어 있으면, 설치하지 않아도 됩니다.
