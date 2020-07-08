@@ -13,6 +13,7 @@ export {View} => import {View};
 */
 import React from 'react';
 import {View} from 'react-native';
+import SearchBar from './components/SearchBar'
 
 class MainComponent extends React.Component {
     render() {
@@ -20,10 +21,10 @@ class MainComponent extends React.Component {
             <View
                 style={{
                     "flex":1, // 전체가 화이트가 됐다
-                    "backgroundColor": 'red',
+                    alignItems: 'center' // 자식 컴포넌트들을 중간으로
                 }}
             >
-                {/* <SearchBar /> */}
+                <SearchBar />
             </View>
         ) // html 의 div 와 같은 역할
     }
