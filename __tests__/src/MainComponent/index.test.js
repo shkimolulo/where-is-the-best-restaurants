@@ -6,7 +6,7 @@ describe('MainComponent', () => {
     let MainComponent;
     
     beforeEach(() => {
-        MainComponent = require('../../src/MainComponent').default;  // mocking 하기 편하게 나온다
+        MainComponent = require('../../../src/MainComponent').default;  // mocking 하기 편하게 나온다
     });
 
     it('렌더링 시킬 수 있다.', () => {

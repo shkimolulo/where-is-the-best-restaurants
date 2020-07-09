@@ -16,6 +16,20 @@ import {View, Alert} from 'react-native';
 import SearchBar from './components/SearchBar'
 
 class MainComponent extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.requestTheBestRestaurants = this.requestTheBestRestaurants.bind(this)
+    }
+
+    async requestTheBestRestaurants(sigunNm: string) {
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        const response = await fetch('https://openapi.gg.go.kr/PlaceThatDoATasteyFoodSt?SIGUN_NM=' + encodeURIComponent(sigunNm));
+        const json  = await response.json();
+
+        console.log(json)
+    }
+
     render() {
         return (
             <View
@@ -24,7 +38,7 @@ class MainComponent extends React.Component {
                     alignItems: 'center' // 자식 컴포넌트들을 중간으로
                 }}
             >
-                <SearchBar onPressSearch={(text) => alert(text)}/>
+                <SearchBar onPressSearch={this.requestTheBestRestaurants.bind(this)}/>
             </View>
         ) // html 의 div 와 같은 역할
     }
