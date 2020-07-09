@@ -1,16 +1,16 @@
 import React from 'react';
-import {View, TextInput, StyleSheet, Text} from 'react-native';
+import {View, TextInput, StyleSheet, Text, TouchableOpacity, Alert} from 'react-native';
 import { SearchBarProps, SearchBarStates, ISearchBar } from './types';
 
 
 class SearchBar extends React.Component<
   SearchBarProps, SearchBarStates
 > implements ISearchBar {
-
   constructor(props) {
     super(props);
 
     this.onChangeText = this.onChangeText.bind(this);
+    this.onPress = this.onPress.bind(this);
 
     this.state = {
       text: '',
@@ -19,6 +19,11 @@ class SearchBar extends React.Component<
 
   onChangeText(text: string) {
     this.setState({text: text});
+  }
+
+  onPress() {
+      this.props.onPressSearch(this.state.text);
+    // alert('경고!!!!') // 소문자 alert 만 가능, 대문자 Alert 는 되지 않음
   }
 
   render() {
@@ -33,9 +38,12 @@ class SearchBar extends React.Component<
           />
         </View>
 
-        <View style={styles.button}>
-
-        </View>
+        <TouchableOpacity 
+            style={styles.button}
+            onPress={this.onPress}
+        >
+            <Text>검색</Text>
+        </TouchableOpacity>
 
       </View>
     );
@@ -64,5 +72,7 @@ const styles = StyleSheet.create({
   button: {
     width: 70,
     backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

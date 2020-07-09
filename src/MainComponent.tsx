@@ -12,7 +12,7 @@ export default => import React;
 export {View} => import {View};
 */
 import React from 'react';
-import {View} from 'react-native';
+import {View, Alert} from 'react-native';
 import SearchBar from './components/SearchBar'
 
 class MainComponent extends React.Component {
@@ -24,7 +24,7 @@ class MainComponent extends React.Component {
                     alignItems: 'center' // 자식 컴포넌트들을 중간으로
                 }}
             >
-                <SearchBar />
+                <SearchBar onPressSearch={(text) => alert(text)}/>
             </View>
         ) // html 의 div 와 같은 역할
     }

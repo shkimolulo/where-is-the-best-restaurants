@@ -10,7 +10,9 @@ interface SearchBarStates {
     text: string;
 }
 
-interface ISearchBar extends TextInputProps {} // 자바의 메소드와 같은 기능
+interface ISearchBar extends TextInputProps {
+    onPress: () => void, 
+} // 자바의 메소드와 같은 기능
 
 export {
     SearchBarProps,
