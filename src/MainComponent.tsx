@@ -23,8 +23,16 @@ class MainComponent extends React.Component {
     }
 
     async requestTheBestRestaurants(sigunNm: string) {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        };
+
+        const path = 'https://openapi.gg.go.kr/PlaceThatDoATasteyFoodSt?SIGUN_NM=' + encodeURIComponent(sigunNm)
         // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-        const response = await fetch('https://openapi.gg.go.kr/PlaceThatDoATasteyFoodSt?SIGUN_NM=' + encodeURIComponent(sigunNm));
+        const response = await fetch(path, options);
         const json  = await response.json();
 
         console.log(json)
@@ -50,7 +58,7 @@ export default MainComponent;
 export default MainComponent;
 export {a}
 
-import 
+import
 */
 
 /*

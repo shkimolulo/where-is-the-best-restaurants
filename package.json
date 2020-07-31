@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest -u",
     "lint": "eslint .",
     "build": "yarn tsc",
     "validate": "yarn lint && yarn build && yarn test"

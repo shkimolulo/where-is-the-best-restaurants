@@ -12,11 +12,18 @@ describe('MainComponent : requestTheBestRestaurants', () => {
         fetch = mockFetch;
 
         const sigunNm = '수원시'
+        const path = 'https://openapi.gg.go.kr/PlaceThatDoATasteyFoodSt?SIGUN_NM=' + encodeURIComponent(sigunNm)
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        };
 
         // When
         MainComponent.prototype.requestTheBestRestaurants(sigunNm);
 
         // Then
-        expect(mockFetch).toBeCalledWith('https://openapi.gg.go.kr/PlaceThatDoATasteyFoodSt?SIGUN_NM=' + encodeURIComponent(sigunNm));
+        expect(mockFetch).toBeCalledWith(path, options);
     });
 });
