@@ -14,6 +14,7 @@ export {View} => import {View};
 import React from 'react';
 import {View, Alert} from 'react-native';
 import SearchBar from './components/SearchBar'
+import TheBestRestaurants from './components/TheBestRestaurants'
 
 class MainComponent extends React.Component {
     constructor(props) {
@@ -56,6 +57,7 @@ class MainComponent extends React.Component {
                 }}
             >
                 <SearchBar onPressSearch={this.requestTheBestRestaurants.bind(this)}/>
+                <TheBestRestaurants/>
             </View>
         ) // html 의 div 와 같은 역할
     }
